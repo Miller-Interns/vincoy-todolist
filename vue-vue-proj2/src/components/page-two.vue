@@ -1,17 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useTodo } from '../composables/to-do'
+import { useTodo } from '../composables/use-to-do'
 
 const newCategory = ref('')
-const {
-  categories,
-  addCategory,
-  addItem,
-  deleteItem,
-  editItem,
-  deleteCategory,
-  editCategory,
-} = useTodo(newCategory)
+const { categories, addCategory, addItem, deleteItem, editItem, deleteCategory, editCategory } =
+  useTodo(newCategory)
 </script>
 
 <template>
@@ -25,7 +18,9 @@ const {
         <h2>{{ category.name }}</h2>
         <div>
           <button class="edit-cat-btn" @click="editCategory(category.id)">Edit</button>
-          <button class="delete-cat-btn" @click="deleteCategory(category.id)">Delete Category</button>
+          <button class="delete-cat-btn" @click="deleteCategory(category.id)">
+            Delete Category
+          </button>
         </div>
       </div>
 
